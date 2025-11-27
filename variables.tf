@@ -81,7 +81,7 @@ variable "vswitch_cidrs" {
 variable "availability_zones" {
   description = "List available zones to launch several VSwitches."
   type        = list(string)
-  default     = [cn-hangzhou-e]
+  default     = "cn-hangzhou-e"
 }
 
 variable "vswitch_name" {
