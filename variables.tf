@@ -75,7 +75,7 @@ variable "vpc_tags" {
 variable "vswitch_cidrs" {
   description = "List of cidr blocks used to launch several new vswitches. If not set, there is no new vswitches will be created."
   type        = list(string)
-  default     = []
+  default     = ["172.16.0.0/21"]
 }
 
 variable "availability_zones" {
