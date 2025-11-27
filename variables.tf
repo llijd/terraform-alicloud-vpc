@@ -1,7 +1,7 @@
 variable "region" {
   description = "(Deprecated from version 1.9.0) The region used to launch this module resources."
   type        = string
-  default     = ""
+  default     = "cn-hangzhou"
 }
 
 variable "profile" {
@@ -81,7 +81,7 @@ variable "vswitch_cidrs" {
 variable "availability_zones" {
   description = "List available zones to launch several VSwitches."
   type        = list(string)
-  default     = []
+  default     = [cn-hangzhou-e]
 }
 
 variable "vswitch_name" {
