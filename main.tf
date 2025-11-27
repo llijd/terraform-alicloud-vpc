@@ -18,7 +18,7 @@ resource "alicloud_vswitch" "vswitches" {
   count        = local.create_sub_resources ? length(var.vswitch_cidrs) : 0
   vpc_id       = var.vpc_id != "" ? var.vpc_id : concat(alicloud_vpc.vpc.*.id, [""])[0]
   cidr_block   = var.vswitch_cidrs[count.index]
-  zone_id      = element(var.availability_zones, count.index)
+  zone_id      = element(var.availability_zones[0], count.index)
   vswitch_name = length(var.vswitch_cidrs) > 1 || var.use_num_suffix ? format("%s%03d", var.vswitch_name, count.index + 1) : var.vswitch_name
   description  = var.vswitch_description
   tags = merge(
